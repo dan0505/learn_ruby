@@ -21,7 +21,7 @@ end
 
 def scrabble_score(word)
     tmp_score = 0
-    word.split('').each { |c|
+    word.each_char { |c|
         tmp_score += score(c)
     }
     tmp_score
