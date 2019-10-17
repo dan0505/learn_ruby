@@ -1,0 +1,21 @@
+<table>
+<tr>
+<% @movie_columns.each do |column| %>
+<th><%= column.titlecase %></th>
+<% end%>
+</tr>
+
+<style>
+.even {
+    background-color: lightgrey;
+}
+</style>
+
+<% @movies.each do |movie|  %>
+<tr class='<%= cycle("even", "odd") %>'>
+    <% @movie_columns.each do |column| %>
+        <th><%= movie[column] %></th>
+    <% end %>
+</tr>
+<% end %>
+</table>
